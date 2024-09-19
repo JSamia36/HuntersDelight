@@ -1,0 +1,1 @@
+A collection of all the things that should be needed for starting a hunt on a new program. From sub-domain discovery, port scanning and path discovery, this will hopefully be a easy reference guide to finding what you need!
