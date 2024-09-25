@@ -10,9 +10,10 @@ $ ffuf -w /subdomain_megalist.txt -u 'https://FUZZ.example.com' -c -t 350 -mc al
 $ dnsx -d example.com -w /usr/share/seclists/discovery/Discovery/DNS/subdomains-top1million-2000.txt >> subs.txt
 $ asnmap -d example.com >> subs.txt
 $ echo example.com | alterx -enrich
-
+$ curl -s https://crt.sh/\?q\=\example.com\&output\=json | jq -r '.[].name_value' | grep -Po '(\w+\.\w+\w+)$' | anew subs.txt
 ```
 
 # URL list
 ```
 $ subfinder -dL example.txt -o subs.txt
+$ cat example.txt | assetfinder -subs-only >> subs.txt
